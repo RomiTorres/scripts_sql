@@ -1,0 +1,20 @@
+/*Configuración de Logs en postgreSQL*/
+
+/*Activación del recolector de logs*/
+logging_collector = on
+
+# Directorio donde se almacenarán
+log_directory = 'log'
+
+# Formato del nombre del archivo
+log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
+
+# Tiempo mínimo para registrar consultas lentas (ms)
+log_min_duration_statement = 500
+
+# Nivel de detalle de los mensajes
+log_line_prefix = '%t [%p]: [%l-1] user=%u,db=%d,app=%a,client=%h '
+
+# Rotación de logs
+log_rotation_age = 1d
+log_rotation_size = 100MB
